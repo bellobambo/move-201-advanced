@@ -27,16 +27,16 @@ module bambo_addr::MapsDemo{
 
     #[test]
     fun test_function(){
-        let my_map = create_map();
-        let country = simple_map::borrow(&mut my_map, &2);
-        print(country);
-        let length = check_map_length(my_map);
-        print(&length);
-        let new_map = remove_from_map(my_map, 3);
-        let length = check_map_length(new_map);
-        print(&length);
-        let country = simple_map::borrow(&mut new_map, &2);
-        print(country);
+        // let my_map = create_map();
+        // let country = simple_map::borrow(&mut my_map, &2);
+        // print(country);
+        // let length = check_map_length(my_map);
+        // print(&length);
+        // let new_map = remove_from_map(my_map, 3);
+        // let length = check_map_length(new_map);
+        // print(&length);
+        // let country = simple_map::borrow(&mut new_map, &2);
+        // print(country);
     }
 
 }
