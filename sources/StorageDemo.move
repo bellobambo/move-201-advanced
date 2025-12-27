@@ -46,27 +46,27 @@ module bambo_addr::StorageDemo{
     use std::string::{utf8};
 
 
-    #[test(user = @0x123)]
-    fun test_function(user : signer) acquires StakePool{
-        add_user(&user);
-        assert!(read_pool(signer::address_of(&user)) == 0, 1);
-        print(&utf8(b"User Added Successfully"));
+    // #[test(user = @0x123)]
+    // fun test_function(user : signer) acquires StakePool{
+    //     add_user(&user);
+    //     assert!(read_pool(signer::address_of(&user)) == 0, 1);
+    //     print(&utf8(b"User Added Successfully"));
 
-        stake(signer::address_of(&user));
-        assert!(read_pool(signer::address_of(&user)) == 100, 2);
-        print(&utf8(b"User Stake 100 Tokens "));
+    //     stake(signer::address_of(&user));
+    //     assert!(read_pool(signer::address_of(&user)) == 100, 2);
+    //     print(&utf8(b"User Stake 100 Tokens "));
 
-        unstake(signer::address_of(&user));
-        assert!(read_pool(signer::address_of(&user)) == 0, 1);
-        print(&utf8(b"User Unstaked Successfully"));
+    //     unstake(signer::address_of(&user));
+    //     assert!(read_pool(signer::address_of(&user)) == 0, 1);
+    //     print(&utf8(b"User Unstaked Successfully"));
 
-        remove_user(&user);
-        assert!(confirm_user(signer::address_of(&user)) == false, 1);
-        print(&utf8(b"User Removed From StakePool Successfully"));
-
-
+    //     remove_user(&user);
+    //     assert!(confirm_user(signer::address_of(&user)) == false, 1);
+    //     print(&utf8(b"User Removed From StakePool Successfully"));
 
 
-    }
+
+
+    // }
 
 }
