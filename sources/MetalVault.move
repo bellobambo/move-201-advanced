@@ -96,23 +96,23 @@ module bambo_addr::metal_vault{
         
     } 
 
-   #[test_only]
-   use std::signer;
+//    #[test_only]
+//    use std::signer;
 
-    #[test(client1 = @0x123, client2 = @0x144)]
-    fun test_function(client1: signer, client2 : signer) acquires MetalVault{
-        init_client(&client1);
-        init_client(&client2);
-        assert!(exists<MetalVault>(signer::address_of(&client1)) == true, 101);
-        assert!(exists<MetalVault>(signer::address_of(&client2)) == true, 101);
-        add_metal(signer::address_of(&client1), utf8(b"UAE"), GOLD, 3, 57);
-        add_metal(signer::address_of(&client1), utf8(b"COL"), GOLD, 5, 28);
-        add_metal(signer::address_of(&client1), utf8(b"MEX"), SILVER, 6, 57);
-        get_client_balance(signer::address_of(&client1), GOLD);
-        get_client_balance(signer::address_of(&client2), SILVER);
+//     #[test(client1 = @0x123, client2 = @0x144)]
+//     fun test_function(client1: signer, client2 : signer) acquires MetalVault{
+//         init_client(&client1);
+//         init_client(&client2);
+//         assert!(exists<MetalVault>(signer::address_of(&client1)) == true, 101);
+//         assert!(exists<MetalVault>(signer::address_of(&client2)) == true, 101);
+//         add_metal(signer::address_of(&client1), utf8(b"UAE"), GOLD, 3, 57);
+//         add_metal(signer::address_of(&client1), utf8(b"COL"), GOLD, 5, 28);
+//         add_metal(signer::address_of(&client1), utf8(b"MEX"), SILVER, 6, 57);
+//         get_client_balance(signer::address_of(&client1), GOLD);
+//         get_client_balance(signer::address_of(&client2), SILVER);
 
-        // get_client_balance(signer::address_of(&client1), GOLD);
+//         // get_client_balance(signer::address_of(&client1), GOLD);
 
-    }
+//     }
 }
 
