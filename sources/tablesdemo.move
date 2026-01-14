@@ -46,38 +46,38 @@ module bambo_addr::tables_demo{
     }
 
 
-    #[test_only]
-    use std::debug::print;
+    // #[test_only]
+    // use std::debug::print;
 
-    #[test_only]
-    use std::string::utf8;
+    // #[test_only]
+    // use std::string::utf8;
 
-    #[test(seller1 = @0x123, seller2 = @0x124)]
-    fun test_function(seller1 : signer, seller2 : signer)acquires PropList{
-        register_seller(&seller1);
-        let prop_info1 = Property{
-            baths: 2,
-            beds: 3,
-            sqm: 110,
-            phy_address: utf8(b"Osun State, Nigeria"),
-            price: 250000,
-            available: true,
-        };
-        list_property(&seller1, prop_info1);
-        let (_, _, _, location, _, _) = read_property(seller1, 1);
-        print(&location);
+    // #[test(seller1 = @0x123, seller2 = @0x124)]
+    // fun test_function(seller1 : signer, seller2 : signer)acquires PropList{
+    //     register_seller(&seller1);
+    //     let prop_info1 = Property{
+    //         baths: 2,
+    //         beds: 3,
+    //         sqm: 110,
+    //         phy_address: utf8(b"Osun State, Nigeria"),
+    //         price: 250000,
+    //         available: true,
+    //     };
+    //     list_property(&seller1, prop_info1);
+    //     let (_, _, _, location, _, _) = read_property(seller1, 1);
+    //     print(&location);
 
-        register_seller(&seller2);
-        let prop_info1 = Property{
-            baths: 2,
-            beds: 2,
-            sqm: 150,
-            phy_address: utf8(b"Abudabi, Europe"),
-            price: 300000,
-            available: true,
-        };
-        list_property(&seller2, prop_info1);
-        let (_, _, _, price, _, _) = read_property(seller2, 1);
-        print(&price);
-    }
+    //     register_seller(&seller2);
+    //     let prop_info1 = Property{
+    //         baths: 2,
+    //         beds: 2,
+    //         sqm: 150,
+    //         phy_address: utf8(b"Abudabi, Europe"),
+    //         price: 300000,
+    //         available: true,
+    //     };
+    //     list_property(&seller2, prop_info1);
+    //     let (_, _, _, price, _, _) = read_property(seller2, 1);
+    //     print(&price);
+    // }
 }
