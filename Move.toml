@@ -1,10 +1,10 @@
 [package]
-name = "move-201"
+name = "price-feed"
 version = "1.0.0"
 authors = []
 
 [addresses]
-bambo_addr = "0x348bd23693da2b95f63324d966e020bfe7dfa2eed8c9c16cae61edadc55c5303"
+bambo_addr = "627b0303c398d34eff5fdc472f6275892d9aa0c6ad43e3ad72f6b853141b1632"
 
 [dev-addresses]
 

@@ -27,7 +27,7 @@ module bambo_addr::price_feeds {
     }
 
 
-    fun update_feed(owner: &signer, last_price: u64, symbol: String) acquires PriceFeeds {
+    public entry fun update_feed(owner: &signer, last_price: u64, symbol: String) acquires PriceFeeds {
         let signer_addr = signer::address_of(owner);
         assert!(signer_addr == @bambo_addr, ENOT_OWNER);
         let time = timestamp::now_seconds();
@@ -46,7 +46,9 @@ module bambo_addr::price_feeds {
         }
     }
 
-    fun get_token_price(symbol: String): TokenFeed acquires PriceFeeds {
+
+    #[view]
+    public fun get_token_price(symbol: String): TokenFeed acquires PriceFeeds {
         let data_ref = borrow_global<PriceFeeds>(@bambo_addr);
         let (result, index) = vector::index_of(&data_ref.symbols, &symbol);
         
